@@ -111,7 +111,14 @@ func header_compressed_nomemcopy(w io.Writer) error {
 	"io/ioutil"
 	"path"
 	"path/filepath"
+	"grate"
 )
+
+func init() {
+	grate.Asset = Asset
+	grate.AssetDir = AssetDir
+	grate.AssetNames = AssetNames
+}
 
 func bindata_read(data, name string) ([]byte, error) {
 	var empty [0]byte
@@ -154,7 +161,14 @@ func header_compressed_memcopy(w io.Writer) error {
 	"io/ioutil"
 	"path"
 	"path/filepath"
+	"grate"
 )
+
+func init() {
+	grate.Asset = Asset
+	grate.AssetDir = AssetDir
+	grate.AssetNames = AssetNames
+}
 
 func bindata_read(data []byte, name string) ([]byte, error) {
 	gz, err := gzip.NewReader(bytes.NewBuffer(data))
@@ -188,7 +202,14 @@ func header_uncompressed_nomemcopy(w io.Writer) error {
 	"io/ioutil"
 	"path"
 	"path/filepath"
+	"grate"
 )
+
+func init() {
+	grate.Asset = Asset
+	grate.AssetDir = AssetDir
+	grate.AssetNames = AssetNames
+}
 
 func bindata_read(data, name string) ([]byte, error) {
 	var empty [0]byte
@@ -214,7 +235,14 @@ func header_uncompressed_memcopy(w io.Writer) error {
 	"io/ioutil"
 	"path"
 	"path/filepath"
+	"grate"
 )
+
+func init() {
+	grate.Asset = Asset
+	grate.AssetDir = AssetDir
+	grate.AssetNames = AssetNames
+}
 `)
 	return err
 }
